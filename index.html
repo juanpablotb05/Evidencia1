@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/windows-server-file-servers-and-storage-management.icon.svg" type="image/x-icon">
+    <title>Evidencia 1</title>
+</head>
+<body>
+    <header>
+        <h1>Instalar Windows Server desde el medio de instalación</h1>
+        <p>Aprenda a crear una unidad USB o un DVD de arranque que se puedan usar para instalar Windows Server en sus dispositivos. La creación de un medio de instalación de Windows Server es un paso crucial para configurar un nuevo servidor o actualizar uno existente. Este artículo tiene como objetivo guiarlo sobre cómo crear medios de instalación e instalar Windows Server utilizando las opciones de instalación Server Core o Desktop Experience.</p>
+    </header>
+
+    <div class="indice">
+        <h2>Contenido del Tutorial</h2>
+        <ol>
+            <li><a href="#Prerrequisitos">Prerrequisitos</a></li>
+            <li><a href="#USB">Crear una unidad flash USB de arranque</a></li>
+            <li><a href="#DVD">Crear un DVD de arranque</a></li>
+            <li><a href="#BIOS">Configurar los ajustes del BIOS</a></li>
+            <li><a href="#Server">Instalar Windows Server</a></li>
+        </ol>
+    </div>
+
+        <div id="Prerrequisitos" class="tema">
+            <h2>Prerrequisitos</h2>
+            <img src="img/images.jpg" alt="Windows Server">
+            <p>Los medios de instalación para la versión de destino de Windows Server se pueden obtener de los canales de fabricantes de equipos originales (OEM), minoristas, suscripción a Visual Studio y del Centro de servicios de licencias por volumen (VLSC). El dispositivo tampoco debe ejecutarse en Azure. Si desea instalar Windows Server en Azure, consulte Inicio rápido: Crear una máquina virtual de Windows en el portal de Azure . Se requieren los siguientes elementos antes de instalar Windows Server:
+                <h3>Hardware</h3>
+                <ol>
+                    <li>Su dispositivo debe cumplir o superar los requisitos mínimos de hardware. Para obtener más información, consulte Requisitos de hardware para Windows Server.</li>
+                    <li>Una unidad flash USB de al menos 8 GB.</li>
+                    <li>Una unidad óptica capaz de grabar un disco DVD+/-RW de doble capa.</li>
+                    <li>Un DVD de doble capa de 8,5 GB.</li>
+                </ol>
+                <h3>Software</h3>
+                <ol>
+                    <li>Determine qué versión de Windows Server es la adecuada para su entorno. Para obtener más información, consulte Comparación de ediciones de Windows Server.</li>
+                    <li>Asegúrate de tener una clave de producto o una licencia de suscripción válidas para tu producto. Las claves de producto y los métodos de activación pueden variar según el canal de distribución del que hayas recibido los medios de Windows Server, como un programa de licencias comerciales, un minorista o un OEM.</li>
+                </ol>
+        </div>
+        <div id="USB" class="tema">
+            <h2>Crear una unidad flash USB de arranque</h2>
+            <img src="img/832341957-lg.jpg" alt="Flash USB">
+            <p>En general, la creación de una unidad USB de arranque se puede realizar mediante la utilidad diskpart.exe . Como alternativa a la preparación manual de la unidad USB, los usuarios pueden ejecutar el siguiente script de PowerShell para que la unidad USB sea de arranque. El archivo ISO de instalación de Windows Server debe estar montado antes de ejecutar este script. Para montar el archivo ISO, realice los siguientes pasos:</p>
+            <ol>
+                <li>Localice el archivo ISO de instalación de Windows Server.</li>
+                <li>Haga clic derecho en su archivo ISO y seleccione Montar.</li>
+            </ol>
+            <p>Al montar el archivo ISO se crea una unidad óptica virtual, con su propia letra de unidad, donde los usuarios pueden migrar el contenido ISO a su unidad USB.</p>
+            <p>Una vez que conecte su unidad USB, debería proporcionarle una letra de unidad. Una vez que conozca la letra de unidad tanto de la unidad USB como de la ISO montada, ejecute uno de los siguientes scripts. Cada script representa tres reintentos antes de pasar al siguiente conjunto de archivos.</p>
+            
+            
+        </div>
+
+
+
+
+
+</body>
+</html>
