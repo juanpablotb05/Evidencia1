@@ -20,7 +20,6 @@
             <li><a href="#USB">Crear una unidad flash USB de arranque</a></li>
             <li><a href="#DVD">Crear un DVD de arranque</a></li>
             <li><a href="#BIOS">Configurar los ajustes del BIOS</a></li>
-            <li><a href="#Server">Instalar Windows Server</a></li>
         </ol>
     </div>
 
@@ -50,14 +49,27 @@
                 <li>Haga clic derecho en su archivo ISO y seleccione Montar.</li>
             </ol>
             <p>Al montar el archivo ISO se crea una unidad óptica virtual, con su propia letra de unidad, donde los usuarios pueden migrar el contenido ISO a su unidad USB.</p>
-            <p>Una vez que conecte su unidad USB, debería proporcionarle una letra de unidad. Una vez que conozca la letra de unidad tanto de la unidad USB como de la ISO montada, ejecute uno de los siguientes scripts. Cada script representa tres reintentos antes de pasar al siguiente conjunto de archivos.</p>
-            
-            
+            <p>Una vez que conecte su unidad USB, debería proporcionarle una letra de unidad. Una vez que conozca la letra de unidad tanto de la unidad USB como de la ISO montada.</p>
         </div>
-
-
-
-
-
+        <div id="DVD" class="tema">
+            <h2>Crear un DVD de arranque</h2>
+            <img src="img/dvd.jpg" alt="Flash USB">
+            <ol>
+                <LI>Inserte un DVD de doble capa de 8,5 GB en su unidad óptica.</LI>
+                <LI>Localice el archivo ISO de instalación de Windows Server.</LI>
+                <LI>Haga clic derecho en su archivo ISO y seleccione Grabar imagen de disco .</LI>
+                <LI>l asistente del Grabador de imágenes de disco de Windows le solicita que seleccione la unidad grabadora de discos que desea utilizar.</LI>
+                <LI>Seleccione la unidad adecuada y luego seleccione el botón Grabar .</LI>
+                <LI>Este paso es opcional, pero se recomienda para garantizar que se verifique la integridad de los datos y no haya errores ni discrepancias entre el disco grabado y la imagen ISO original. Seleccione la casilla de verificación Verificar disco después de grabar para detectar las diferencias.</LI>
+            </ol>
+        </div>
+        <div id="BIOS" class="BIOS">
+            <h2>Configurar los ajustes del BIOS</h2>
+            <img src="img/BIOS.jpg" alt="BIOS">
+            <ol>I
+                <ul>Antes de poder instalar Windows Server a través de USB o DVD, se debe cambiar el orden de arranque de la computadora en el BIOS para garantizar que el sistema arranque desde el USB o el DVD. El acceso al BIOS puede variar según el hardware. En la mayoría de los casos, puede acceder al BIOS presionando una tecla específica mientras se inicia el dispositivo. Por lo general, la tecla es F2 , F10 , F12 o Eliminar . Consulte el manual del usuario de su dispositivo. En ciertos hardware, una vez que se completa la POST, hay una ventana corta permitida para acceder al BIOS. Es posible que deba presionar repetidamente una de las teclas tan pronto como se complete la POST.</ul>
+                <ul>Una vez que esté en la configuración del BIOS, navegue por los menús hasta que vea la opción Orden de arranque o Secuencia de arranque . Consulte el manual del usuario de su dispositivo para encontrar esta configuración. Una vez que seleccione la configuración del orden de arranque, puede editar la prioridad del orden de arranque en orden descendente. Mueva el arranque desde la unidad USB o la unidad óptica a la parte superior de la lista según el método de instalación de medios que esté utilizando. Una vez que haya realizado los cambios adecuados, guarde y salga del BIOS. Su dispositivo se reiniciará automáticamente al aplicar estos cambios.</ul>
+            </ol>
+        </div>
 </body>
 </html>
