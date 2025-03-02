@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidencia 1 - Instalación de Windows Server</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/windows-server-file-servers-and-storage-management.icon.svg" type="image/x-icon">
-    <title>Evidencia 1</title>
 </head>
 <body>
+
     <header>
         <h1>Instalar Windows Server desde el medio de instalación</h1>
-        <p>Aprenda a crear una unidad USB o un DVD de arranque que se puedan usar para instalar Windows Server en sus dispositivos. La creación de un medio de instalación de Windows Server es un paso crucial para configurar un nuevo servidor o actualizar uno existente. Este artículo tiene como objetivo guiarlo sobre cómo crear medios de instalación e instalar Windows Server utilizando las opciones de instalación Server Core o Desktop Experience.</p>
+        <p>Aprenda a crear una unidad USB o un DVD de arranque para instalar Windows Server en sus dispositivos. La creación de un medio de instalación es un paso crucial para configurar un nuevo servidor o actualizar uno existente.</p>
     </header>
 
-    <div class="indice">
+    <nav class="indice">
         <h2>Contenido del Tutorial</h2>
         <ol>
             <li><a href="#Prerrequisitos">Prerrequisitos</a></li>
@@ -21,55 +22,79 @@
             <li><a href="#DVD">Crear un DVD de arranque</a></li>
             <li><a href="#BIOS">Configurar los ajustes del BIOS</a></li>
         </ol>
-    </div>
+    </nav>
 
-        <div id="Prerrequisitos" class="tema">
-            <h2>Prerrequisitos</h2>
-            <img src="img/images.jpg" alt="Windows Server">
-            <p>Los medios de instalación para la versión de destino de Windows Server se pueden obtener de los canales de fabricantes de equipos originales (OEM), minoristas, suscripción a Visual Studio y del Centro de servicios de licencias por volumen (VLSC). El dispositivo tampoco debe ejecutarse en Azure. Si desea instalar Windows Server en Azure, consulte Inicio rápido: Crear una máquina virtual de Windows en el portal de Azure . Se requieren los siguientes elementos antes de instalar Windows Server:
-                <h3>Hardware</h3>
-                <ol>
-                    <li>Su dispositivo debe cumplir o superar los requisitos mínimos de hardware. Para obtener más información, consulte Requisitos de hardware para Windows Server.</li>
-                    <li>Una unidad flash USB de al menos 8 GB.</li>
-                    <li>Una unidad óptica capaz de grabar un disco DVD+/-RW de doble capa.</li>
-                    <li>Un DVD de doble capa de 8,5 GB.</li>
-                </ol>
-                <h3>Software</h3>
-                <ol>
-                    <li>Determine qué versión de Windows Server es la adecuada para su entorno. Para obtener más información, consulte Comparación de ediciones de Windows Server.</li>
-                    <li>Asegúrate de tener una clave de producto o una licencia de suscripción válidas para tu producto. Las claves de producto y los métodos de activación pueden variar según el canal de distribución del que hayas recibido los medios de Windows Server, como un programa de licencias comerciales, un minorista o un OEM.</li>
-                </ol>
-        </div>
-        <div id="USB" class="tema">
-            <h2>Crear una unidad flash USB de arranque</h2>
-            <img src="img/832341957-lg.jpg" alt="Flash USB">
-            <p>En general, la creación de una unidad USB de arranque se puede realizar mediante la utilidad diskpart.exe . Como alternativa a la preparación manual de la unidad USB, los usuarios pueden ejecutar el siguiente script de PowerShell para que la unidad USB sea de arranque. El archivo ISO de instalación de Windows Server debe estar montado antes de ejecutar este script. Para montar el archivo ISO, realice los siguientes pasos:</p>
-            <ol>
-                <li>Localice el archivo ISO de instalación de Windows Server.</li>
-                <li>Haga clic derecho en su archivo ISO y seleccione Montar.</li>
-            </ol>
-            <p>Al montar el archivo ISO se crea una unidad óptica virtual, con su propia letra de unidad, donde los usuarios pueden migrar el contenido ISO a su unidad USB.</p>
-            <p>Una vez que conecte su unidad USB, debería proporcionarle una letra de unidad. Una vez que conozca la letra de unidad tanto de la unidad USB como de la ISO montada.</p>
-        </div>
-        <div id="DVD" class="tema">
-            <h2>Crear un DVD de arranque</h2>
-            <img src="img/dvd.jpg" alt="Flash USB">
-            <ol>
-                <LI>Inserte un DVD de doble capa de 8,5 GB en su unidad óptica.</LI>
-                <LI>Localice el archivo ISO de instalación de Windows Server.</LI>
-                <LI>Haga clic derecho en su archivo ISO y seleccione Grabar imagen de disco .</LI>
-                <LI>l asistente del Grabador de imágenes de disco de Windows le solicita que seleccione la unidad grabadora de discos que desea utilizar.</LI>
-                <LI>Seleccione la unidad adecuada y luego seleccione el botón Grabar .</LI>
-                <LI>Este paso es opcional, pero se recomienda para garantizar que se verifique la integridad de los datos y no haya errores ni discrepancias entre el disco grabado y la imagen ISO original. Seleccione la casilla de verificación Verificar disco después de grabar para detectar las diferencias.</LI>
-            </ol>
-        </div>
-        <div id="BIOS" class="BIOS">
-            <h2>Configurar los ajustes del BIOS</h2>
-            <img src="img/BIOS.jpg" alt="BIOS">
-            <ol>I
-                <ul>Antes de poder instalar Windows Server a través de USB o DVD, se debe cambiar el orden de arranque de la computadora en el BIOS para garantizar que el sistema arranque desde el USB o el DVD. El acceso al BIOS puede variar según el hardware. En la mayoría de los casos, puede acceder al BIOS presionando una tecla específica mientras se inicia el dispositivo. Por lo general, la tecla es F2 , F10 , F12 o Eliminar . Consulte el manual del usuario de su dispositivo. En ciertos hardware, una vez que se completa la POST, hay una ventana corta permitida para acceder al BIOS. Es posible que deba presionar repetidamente una de las teclas tan pronto como se complete la POST.</ul>
-                <ul>Una vez que esté en la configuración del BIOS, navegue por los menús hasta que vea la opción Orden de arranque o Secuencia de arranque . Consulte el manual del usuario de su dispositivo para encontrar esta configuración. Una vez que seleccione la configuración del orden de arranque, puede editar la prioridad del orden de arranque en orden descendente. Mueva el arranque desde la unidad USB o la unidad óptica a la parte superior de la lista según el método de instalación de medios que esté utilizando. Una vez que haya realizado los cambios adecuados, guarde y salga del BIOS. Su dispositivo se reiniciará automáticamente al aplicar estos cambios.</ul>
-            </ol>
-        </div>
+    <section id="Prerrequisitos" class="tema">
+        <h2>Prerrequisitos</h2>
+        <img src="img/images.jpg" alt="Windows Server">
+        <p>Los medios de instalación de Windows Server se pueden obtener a través de diferentes canales, incluyendo OEM, minoristas y suscripciones. Antes de instalar Windows Server, asegúrese de cumplir con los siguientes requisitos:</p>
+
+        <h3>Hardware</h3>
+        <ul>
+            <li>Cumplir con los requisitos mínimos de hardware.</li>
+            <li>Una unidad flash USB de al menos 8 GB.</li>
+            <li>Una unidad óptica capaz de grabar DVDs de doble capa.</li>
+            <li>Un DVD de doble capa de 8,5 GB.</li>
+        </ul>
+
+        <h3>Software</h3>
+        <ul>
+            <li>Determinar la versión de Windows Server adecuada.</li>
+            <li>Tener una clave de producto o licencia válida.</li>
+        </ul>
+    </section>
+
+    <section id="USB" class="tema">
+        <h2>Crear una unidad flash USB de arranque</h2>
+        <img src="img/832341957-lg.jpg" alt="Flash USB">
+        <p>Para crear una unidad USB de arranque, siga estos pasos:</p>
+        <ol>
+            <li>Localice el archivo ISO de instalación de Windows Server.</li>
+            <li>Haga clic derecho en el archivo ISO y seleccione <strong>Montar</strong>.</li>
+            <li>Se creará una unidad virtual con el contenido del ISO.</li>
+            <li>Copie el contenido del ISO a la unidad USB.</li>
+        </ol>
+    </section>
+
+    <section id="DVD" class="tema">
+        <h2>Crear un DVD de arranque</h2>
+        <img src="img/dvd.jpg" alt="DVD de instalación">
+        <p>Para grabar un DVD de instalación:</p>
+        <ol>
+            <li>Inserte un DVD de doble capa en la unidad óptica.</li>
+            <li>Localice el archivo ISO de instalación de Windows Server.</li>
+            <li>Haga clic derecho en el ISO y seleccione <strong>Grabar imagen de disco</strong>.</li>
+            <li>Seleccione la unidad óptica correcta y haga clic en <strong>Grabar</strong>.</li>
+            <li>(Opcional) Active la opción <strong>Verificar disco después de grabar</strong>.</li>
+        </ol>
+    </section>
+
+    <section id="BIOS" class="tema">
+        <h2>Configurar los ajustes del BIOS</h2>
+        <img src="img/BIOS.jpg" alt="Interfaz BIOS">
+        <p>Antes de instalar Windows Server desde USB o DVD, se debe modificar la configuración del BIOS para cambiar el orden de arranque.</p>
+
+        <h3>Acceder al BIOS</h3>
+        <ul>
+            <li>Reinicie su equipo.</li>
+            <li>Presione la tecla correspondiente para acceder al BIOS (generalmente F2, F10, F12 o Supr).</li>
+            <li>Consulte el manual del fabricante si no está seguro de la tecla correcta.</li>
+        </ul>
+
+        <h3>Modificar el orden de arranque</h3>
+        <ul>
+            <li>Busque la opción <strong>Orden de arranque</strong> o <strong>Boot Sequence</strong>.</li>
+            <li>Mueva la unidad USB o DVD a la parte superior de la lista.</li>
+            <li>Guarde los cambios y salga del BIOS.</li>
+        </ul>
+
+        <p>El equipo se reiniciará y arrancará desde la unidad seleccionada.</p>
+    </section>
+
+    <footer>
+        <p>© 2025 - Guía de instalación de Windows Server</p>
+        <p>Juan Pablo Tabares Bedoya</p>
+    </footer>
+
 </body>
 </html>
